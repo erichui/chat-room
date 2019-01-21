@@ -1,0 +1,15 @@
+{
+  "name": "chat-room",
+  "version": "1.0.0",
+  "description": "node socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "erichui",
+  "license": "ISC",
+  "dependencies": {
+    "mime": "^2.4.0",
+    "socket.io": "^2.2.0"
+  }
+}
