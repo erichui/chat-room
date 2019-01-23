@@ -2,7 +2,7 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 const mime = require('mime')
-
+const chatServer = require('./lib/chat_server.js')
 const cache = {}
 const send404 = (res) => {
   res.writeHead(404, {
@@ -15,7 +15,7 @@ const send404 = (res) => {
 
 const sendFile = (res, filePath, contents) => {
   res.writeHead(200, {
-    'Content-Type': mime.lookup(path.basename(filePath))
+    'Content-Type': mime.getType(path.basename(filePath))
   })
   res.end(contents)
 }
@@ -54,3 +54,7 @@ const server = http.createServer((req, res) => {
 server.listen(8080, () => {
   console.log('server listening on port 8080')
 })
+
+// 启动socket.io服务器
+// 并提供一个定义好的http服务器，这样他们就能共享同一个tcp/ip端口
+chatServer.listen(server)
