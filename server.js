@@ -44,7 +44,6 @@ const serveStatic = (res, absPath) => {
 
 const server = http.createServer((req, res) => {
   const { url } = req
-  console.log(req.url)
   const filePath = url === '/'
     ? 'public/index.html'
     : `public${url}`

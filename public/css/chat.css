@@ -10,9 +10,14 @@ a {
   margin: auto;
 }
 #room {
+  text-align: center;
   background: #ddd;
   height: 500px;
   margin-bottom: 1em;
+}
+#room-name {
+  padding: : 20px 0;
+  border-bottom: 1px solid;
 }
 #messages {
   width: 690px;
